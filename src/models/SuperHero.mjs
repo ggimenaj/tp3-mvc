@@ -1,15 +1,12 @@
 import mongoose from "mongoose";
 
 const superheroSchema = new mongoose.Schema({
-  nombreSuperHeroe: {
-    type: String,
-    required: true,
-  },
+  nombreSuperHeroe: { type: String, required: true,},
   nombreReal: { type: String, required: true },
-  edad: { type: Number, min: 0 },
+  edad: { type: Number, min: 0, required: true },
   planetaOrigen: { type: String, default: "Desconocido" },
   debilidad: { type: String },
-  poderes: { type: String },
+  poderes: { type: [String] },
   aliados: { type: String },
   enemigos: { type: String },
   createdAT: { type: Date, default: Date.now },
